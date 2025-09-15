@@ -1,0 +1,368 @@
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f5f7fa;
+  color: #111;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.landing-container {
+  height: 100vh;
+  width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.landing-container.light {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #212121;
+}
+
+.landing-container.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f1f1f1;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.get-started-btn {
+  background: #6c63ff;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background: #5848d6;
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   === Navbar ===
+=================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #38bdf8;
+}
+
+/* ===================================
+   === Sidebar ===
+=================================== */
+.sidebar {
+  width: 210px;
+  padding: 1.5rem 1rem;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h4 {
+  margin-bottom: 2rem; 
+}
+
+.sidebar ul.nav {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 5rem !important; 
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem; 
+}
+
+.sidebar a.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  color: #111;
+  transition: 0.3s;
+}
+
+.sidebar a.nav-link:hover {
+  background: #38bdf8;
+  color: #fff;
+}
+
+.sidebar i {
+  width: 20px;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+
+
+/* ===================================
+   === Layout ===
+=================================== */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* ===================================
+   === SnippetCard ===
+=================================== */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.snippet-lang {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.App.dark-mode .snippet-lang {
+  color: #ddd;
+}
+
+.snippet-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* === Favorite === */
+.favorite-icon {
+  border: none;
+  padding: 0.4rem;
+  border-radius: 0px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  color: #fff;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2);
+}
+
+.favorite-icon.fas {
+  color: gold;
+}
+
+.favorite-icon.far {
+  color: #888;
+}
+
+.App.dark-mode .favorite-icon.far {
+  color: #ffffff;
+}
+
+/* === Buttons === */
+.btn-edit,
+.btn-delete {
+  border: none;
+  padding: 0.3rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #0051ff;
+}
+
+.btn-edit:hover {
+  background: #003cff;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: #ff0000;
+}
+
+.btn-delete:hover {
+  background: #ff0000;
+  transform: scale(1.05);
+}
+
+/* Dark mode fixes */
+.App.dark-mode .btn-edit {
+  background: #0058e6;
+}
+
+.App.dark-mode .btn-delete {
+  background: #ff0000;
+}
+
+.App.dark-mode .favorite-icon {
+  color: #ffee00 !important;
+}
+
+/* ===================================
+   === Forms ===
+=================================== */
+form {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* ===================================
+   === Snippet Controls (Search/Filter) ===
+=================================== */
+.snippet-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.snippet-controls input,
+.snippet-controls select,
+.snippet-controls button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ===================================
+   === Syntax Highlighter ===
+=================================== */
+pre {
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+}
+
+.App.dark-mode pre {
+  background: #2d2d2d !important;
+  color: #f5f5f5 !important;
+}
+
+/* ===================================
+   === Responsive ===
+=================================== */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   === Dark Mode ===
+=================================== */
+.App.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
+}
+
+.App.dark-mode .navbar,
+.App.dark-mode .sidebar,
+.App.dark-mode .card,
+.App.dark-mode form {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.App.dark-mode .navbar a,
+.App.dark-mode .sidebar a {
+  color: #f5f5f5;
+}
+
+.App.dark-mode .card-title {
+  color: #f5f5f5;
+}
